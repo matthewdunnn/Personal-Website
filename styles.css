@@ -1,0 +1,173 @@
+:root {
+    --blue: #256eff;
+    --black: #2d2d2a;
+    --white: #f6efee;
+}
+* {
+    margin: 0;
+    padding: 0;
+    /*outline: 1px dotted rgb(0, 128, 0);*/
+    box-sizing: border-box;
+}
+
+h1, h2, p, a {
+    font-family:"DynaPuff", cursive;
+    color: var(--black);
+}
+
+header, body, footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+}
+body {
+    
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    height: 4.5rem;
+    justify-content: center;
+}
+header h1 {
+    font-size: 3em;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    min-width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5rem 0;
+}
+
+main section {
+    max-width: 50rem;
+    padding: 0 5px;
+}
+
+
+section h2, section p{
+    margin: 10px;
+}
+
+footer {
+    height: 4rem;
+    max-width: 100%;
+    justify-content: space-evenly;
+}
+.generalLink {
+    text-decoration: none;
+    font-size: 1.5em;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+}
+.generalLink::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--blue);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.generalLink:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.generalLink:hover {
+    color: var(--blue);
+    cursor: pointer;
+}
+.container {
+    position: relative;
+    left: 0.7rem;
+    top: 2rem;
+}
+
+.linkButton {
+    padding: 10px 20px;
+    background-color: crimson;
+    border-radius: 40px;
+    border: solid 3px var(--black);
+    color: var(--white);
+    transition: 0.4s;
+    text-decoration: none;
+    font-size: 1.4em;
+}
+.linkButton::after {
+    background-color: transparent;
+}
+.linkButton:hover {
+    color: crimson;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+strong {
+    color: crimson
+}
+
+/*Media Queries*/
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    section .generalLink{
+        font-size: 0.8em;
+    }
+    section p {
+        font-size: 0.8em;
+    }
+    main section {
+        margin: 10px;
+    }
+    footer .generalLink {
+        font-size: 1em;
+    }
+    main {
+        padding: 1rem 0;
+    }
+    .linkButton {
+        font-size: 1em;
+    }
+}
+@media (min-width:1440px) {
+    header {
+        height: 6rem;
+    }
+    header h1 {
+        font-size: 3.5em;
+    }
+    section .generalLink {
+        font-size: 2em;
+    }
+    section p {
+        font-size: 1.4em;
+    }
+    footer .generalLink {
+        font-size:2em;
+    }
+    main {
+        padding: 6rem 0;
+    }
+    .linkButton {
+        font-size: 1.75em;
+    }
+}
+/*
+  __  __       _   _   _                     ____                    
+ |  \/  | __ _| |_| |_| |__   _____      __ |  _ \ _   _ _ __  _ __  
+ | |\/| |/ _` | __| __| '_ \ / _ \ \ /\ / / | | | | | | | '_ \| '_ \ 
+ | |  | | (_| | |_| |_| | | |  __/\ V  V /  | |_| | |_| | | | | | | |
+ |_|  |_|\__,_|\__|\__|_| |_|\___| \_/\_/   |____/ \__,_|_| |_|_| |_|
+                                                                     
+*/
